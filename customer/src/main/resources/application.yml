@@ -1,0 +1,43 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: customer
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: 'http://127.0.0.1:8761/eureka/'
+rest:
+  api:
+    order:
+      pool_size: 20
+      connection_timeout: 2000
+      read_timeout: 3030
+    product:
+      pool_size: 10
+      connection_timeout: 2000
+      read_timeout: 6000
+hystrix:
+  command:
+    default:
+      circuitBreaker:
+        errorThresholdPercentage: 25
+    getCustomerOrderDetails:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3050
+    getCustomerProductRecommendation:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 6500
+      requestCache:
+        enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -1,0 +1,13 @@
+group 'com.javabuilders'
+version '1.0-SNAPSHOT'
+allprojects {
+    repositories {
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    sourceCompatibility = 1.8
+
+}
+

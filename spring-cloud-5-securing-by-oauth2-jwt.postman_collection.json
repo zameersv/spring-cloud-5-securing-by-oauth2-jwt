@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "fa269411-67af-4011-ad3f-b38221d9372a",
+		"name": "spring-cloud-5-securing-by-oauth2-jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_admin_WRITE_READ_access_token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YXBpX2NsaWVudDphcGlfc2VjcmV0"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "apiuser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_apiuser_READ_access_token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YXBpX2NsaWVudDphcGlfc2VjcmV0"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "apiuser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/oauth/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_customer_details_with_api_gatewa",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Mzg0ODM5MjAsInVzZXJfbmFtZSI6ImFwaXVzZXIiLCJhdXRob3JpdGllcyI6WyJSRUFEIl0sImp0aSI6IjU2MGYyMGFjLTcyOWMtNDQ5MC1iMjY2LTZhZWViYTI3MzI0NSIsImNsaWVudF9pZCI6ImFwaV9jbGllbnQiLCJzY29wZSI6WyJSRUFEIl19.l_-76icdE1kXunMeyBkbgq6eLSN6MqNjEJhzP5kvSrRIUwK0S1DIN02y3jx-GMFA6UwVyyXtUIRaQZsmKBxyYwj7yjS_ebfre5vdqXPom2qiDV3QuNycaXot2Uq4SGpSfuc6JiapXhfaQCoWwmZd2OUUCBS1XWRKd-tDkBrItxi-mQjVhfaPd1v3_sXi0AC58uRMEire159His-7SVoi5O2s9Ek-EnSPU3369MujqZxUj2NE-nq1Q_BE3iGgpQZqc2UswOv4-PnqoqtLJoyGjbUxQAxU3kXxtIXu-LggFENinJMuoGcCGBYMChjsEdB9ALOZovbP44dXyNQT92p9Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "apiuser",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8081/customer/12133",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"customer",
+						"12133"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_customer_details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Mzg1MTc1MjgsInVzZXJfbmFtZSI6ImFwaXVzZXIiLCJhdXRob3JpdGllcyI6WyJSRUFEIl0sImp0aSI6IjVjYjBjMmJmLTNiNjktNDM0Ny04YWNmLWU2MGY1YTFjODFjYiIsImNsaWVudF9pZCI6ImFwaV9jbGllbnQiLCJzY29wZSI6WyJSRUFEIl19.Fboxlc6JN0J1nPtb-mMpoHkHiaBATu1TqVWKg_lpqGIVXyVKT9PVpLE61GXQ-6L7PwFV_Lg4X0lBbgFlfV20VOkcU5JGfLyM2k2EhaAC-YfHs7iibDcwtR_IVq8CdwqSTS_01WEa8aeFvUEUtHhv0UYpOx8Y64aU2ohy3P_5GH-0WrtLLiqO95fRCRe7WsFBF-DFS0DEz3SvA_7PgUwtzYxfAhqWOYiIFL_otGNEFuoM9esv9QW_XaZErLPFHkJAoGh386CgR1Tex5EG1Dj4DtaZmD1SULIwK4N75G-zShpK47Qg3hcsxgb1-2qlLaGflsCITqF-9BqE95fO6nyIFw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8081/customer/12133",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"customer",
+						"12133"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
