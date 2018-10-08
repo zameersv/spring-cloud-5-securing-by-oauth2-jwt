@@ -31,7 +31,7 @@ After  importing the collection into Postman, perform the below steps.
 
 1. Trigger the get_admin_WRITE_READ_access_token request - It will generate access token for Admin
 2. update the Bearer token in get_customer_details_with_api_gateway request and trigger the request - you should see the 200 OK Response.
-3. update the Bearer token in create_customer_details request and trigger the request - You should see 201 Created response as the admin user has 
+3. update the Bearer token in create_customer_details request and trigger the request - You should see 201 Created response as the admin user has WRITE access.
 4. Now, trigger get_apiuser_READ_access_token request and copy the access token from the request body.
 5. update the Bearer token in get_customer_details_with_api_gateway request and trigger the request - you should see the 200 OK Response.
 6. update the Bearer token in create_customer_details request and trigger the request - You should see 403 permission denied response code as the apiuser only has only READ access. Our post method in customer API is allowed only for users with WRITE permisssions.
